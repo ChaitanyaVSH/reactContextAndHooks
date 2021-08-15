@@ -17,7 +17,7 @@ const ThemeToggler = () => {
 
     return (
         <div>
-            <button onClick={themeHandler}>Toggle</button> {" "}
+            <button onClick={themeHandler}>Toggle Theme</button> {" "}
             <button onClick={authHandler}>{auth.isAuthenticated ? "Logout" : "Login"}</button>
         </div>
     )
