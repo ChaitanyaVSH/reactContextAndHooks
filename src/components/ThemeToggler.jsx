@@ -1,17 +1,24 @@
 import React, { useContext } from 'react';
+import { AuthContext } from '../contexts/AuthenticationContext/AuthContext';
 import { ThemeContext } from '../contexts/ThemeContext/ThemeContext';
 
 const ThemeToggler = () => {
 
     const theme = useContext(ThemeContext);
+    const auth = useContext(AuthContext);
 
-    const clickHandler = () => {
-        theme.toggleTheme()
+    const themeHandler = () => {
+        theme.toggleTheme();
+    }
+
+    const authHandler = () => {
+        auth.toggleAuthStatus();
     }
 
     return (
         <div>
-            <button onClick={clickHandler}>Toggle</button>
+            <button onClick={themeHandler}>Toggle</button> {" "}
+            <button onClick={authHandler}>{auth.isAuthenticated ? "Logout" : "Login"}</button>
         </div>
     )
 }

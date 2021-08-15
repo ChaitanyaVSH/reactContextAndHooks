@@ -23,8 +23,16 @@ const AuthProvider = ({children}) => {
     // Creating a default state
     const [auth, setAuth] = useState(authData)
 
+    // Handler to update the auth state
+    function toggleAuthStatus() {
+        setAuth({
+            ...auth,
+            isAuthenticated: !auth.isAuthenticated
+        })
+    }
+
     return (
-        <AuthContext.Provider value={{...auth}}>
+        <AuthContext.Provider value={{...auth, toggleAuthStatus}}>
             {children}
         </AuthContext.Provider>
     )

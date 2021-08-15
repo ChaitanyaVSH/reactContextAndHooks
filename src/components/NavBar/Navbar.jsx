@@ -16,7 +16,7 @@ const Navbar = () => {
             color: theme.text,
         }}>
             <h2>Context and Hooks</h2>
-            {JSON.stringify(authData)}
+            {authData.isAuthenticated ? <h3>Logged In</h3> : <h3>Logged Out</h3>}
             <nav className={styles.navbar}>
                 <ul>
                     <li>Home</li>
