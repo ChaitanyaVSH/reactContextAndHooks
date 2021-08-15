@@ -1,12 +1,14 @@
 import React, { useContext } from 'react';
+import { AuthContext } from '../../contexts/AuthenticationContext/AuthContext';
 import { ThemeContext } from '../../contexts/ThemeContext/ThemeContext';
 import styles from "./NavBar.module.css";
 
 const Navbar = () => {
 
-    const data = useContext(ThemeContext);
+    const themeData = useContext(ThemeContext);
+    const authData = useContext(AuthContext);
 
-    const theme = data.isLightTheme ? data.light : data.dark;
+    const theme = themeData.isLightTheme ? themeData.light : themeData.dark;
 
     return (
         <div className={styles.container} style={{
@@ -14,6 +16,7 @@ const Navbar = () => {
             color: theme.text,
         }}>
             <h2>Context and Hooks</h2>
+            {JSON.stringify(authData)}
             <nav className={styles.navbar}>
                 <ul>
                     <li>Home</li>
