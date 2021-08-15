@@ -42,7 +42,7 @@ const BookContextProvider = ({children}) => {
     const [books, setBooks] = useState(booksList)
 
     return (
-        <BookContext.Provider value={{...books}}>
+        <BookContext.Provider value={{books}}>
             {children}
         </BookContext.Provider>
     )
