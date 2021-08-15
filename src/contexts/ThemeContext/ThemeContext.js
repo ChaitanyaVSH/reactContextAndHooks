@@ -8,7 +8,6 @@ import React, { useState, createContext } from 'react';
  */
 export const ThemeContext = createContext();
 
-
 /**
  * Creating a wrapper that wraps the nested elements with the Context.Provider
  * @param {1} param1 Children, Wrapped components come as children to this wrapper.
