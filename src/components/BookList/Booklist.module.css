@@ -1,0 +1,23 @@
+.container {
+    border-top: 1px solid lightgray;
+    max-width: 700px;
+    margin: 10px auto;
+}
+
+.booklist {
+    padding: 0;
+}
+
+.booklist ul {
+    margin: 10px auto;
+    padding: 0;
+    padding-top: 15px;
+}
+
+.booklist ul li {
+    list-style: none;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid lightgrey;
+    font-size: 20px;
+}
