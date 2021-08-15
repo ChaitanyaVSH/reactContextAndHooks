@@ -1,4 +1,4 @@
-import React, { createContext } from 'react';
+import React, { useState, createContext } from 'react';
 
 /**
  * Creating a context
@@ -16,7 +16,8 @@ export const ThemeContext = createContext();
  */
 const ThemeProvider = ({children}) => {
 
-    const theme = {
+    // Creating a default theme
+    const themeData = {
         isLightTheme: true,
         light: {
             bg: "white",
@@ -28,8 +29,19 @@ const ThemeProvider = ({children}) => {
         }
     }
 
+    // Creating a default state
+    const [theme, setTheme] = useState(themeData)
+
+    // Handler to update the data
+    const toggleTheme = () => {
+        setTheme({
+            ...theme,
+            isLightTheme: !theme.isLightTheme,
+        })
+    }
+
     return (
-        <ThemeContext.Provider value={{...theme}}>
+        <ThemeContext.Provider value={{...theme, toggleTheme}}>
             {children}
         </ThemeContext.Provider>
     );
