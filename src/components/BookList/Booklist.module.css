@@ -10,8 +10,7 @@
 
 .booklist ul {
     margin: 10px auto;
-    padding: 0;
-    padding-top: 15px;
+    padding: 15px 0;
 }
 
 .booklist ul li {

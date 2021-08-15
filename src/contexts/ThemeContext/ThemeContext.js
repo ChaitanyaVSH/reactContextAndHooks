@@ -16,19 +16,20 @@ export const ThemeContext = createContext();
  */
 const ThemeProvider = ({children}) => {
 
-    const state = {
-        name: "Chaitanya",
-        age: 22
-    };
-
-    const marks = {
-        tenth: 98,
-        ipe: 98,
-        btech: 99
+    const theme = {
+        isLightTheme: true,
+        light: {
+            bg: "white",
+            text: "black",
+        },
+        dark: {
+            bg: "black",
+            text: "white",
+        }
     }
 
     return (
-        <ThemeContext.Provider value={{...state, ...marks}}>
+        <ThemeContext.Provider value={{...theme}}>
             {children}
         </ThemeContext.Provider>
     );
